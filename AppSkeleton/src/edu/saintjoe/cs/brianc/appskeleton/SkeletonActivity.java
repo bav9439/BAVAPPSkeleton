@@ -4,7 +4,8 @@
 package edu.saintjoe.cs.brianc.appskeleton;
 
 /* App Skeleton
- * Written by Brian Capouch 17 March 2015
+ * Forked from Brian Capouch 17 March 2015
+ * Changed by Zach Aring on 18 March 2015  
  * This app will serve as the basis for student project apps
  */
 
@@ -37,7 +38,6 @@ public class SkeletonActivity extends Form implements HandlesEventDispatching {
 	private Label resultLabel;
 	private Button Button1;
 	private Label Label1;
-	
 
  // Java Bridger apps all use $define() in place of main()
  void $define() {
@@ -52,7 +52,7 @@ public class SkeletonActivity extends Form implements HandlesEventDispatching {
      line2 = new HorizontalArrangement(this);
      
      // Now create the user interface
-     dumbButton = new Button(line1,"Empujeme");   
+     dumbButton = new Button(line1,"Push me harder");   
      resultLabel = new Label(line2,"");
      
      
@@ -68,14 +68,11 @@ public class SkeletonActivity extends Form implements HandlesEventDispatching {
          Object[] args) {
  	
  	// This code is equivalent to the "Blocks" part of App Inventor
-	    if (component.(dumbButton) && eventName.equals("Click")){
-	    	resultLabel.Text("Empujado!!");
+	    if (component.equals(dumbButton) && eventName.equals("Click")){
+	    	resultLabel.Text("I like being pushed!!");
 	        return true;
 	     } // end dispatch '+' press
-	    if (component.(Button1) && eventName.equals("Click")){
-	    	resultLabel1.Text("Empujado!!");
-	        return true;
-	     }
+	
 	// This line is syntactically required
     return true;
 	} // end dispatchEvent
